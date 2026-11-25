@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>SyscallWarden incident report</title><style>
+body{max-width:58rem;margin:3rem auto;padding:0 1.2rem;background:#f8f7f2;color:#162c35;font:1rem/1.55 system-ui}
+article{border-top:1px solid #9ba9a9;padding:1.2rem 0}h1{font-size:2.5rem}h2{font-size:1.2rem}
+small,summary{color:#145e61}pre{overflow:auto;padding:1rem;background:#e8efed}
+</style><main><h1>SyscallWarden</h1><p>lab-witness · 22 events</p>
+<p>SW-001 × 2 · SW-002 × 1 · SW-003 × 1</p><p>Process evictions 0 · Omitted snapshots 0</p>
+<article><small>SW-001</small><h2>Shell execution after a related network connection</h2><p>/bin/sh [161] ← sw-lab [160]</p><details><summary>Event evidence</summary><pre>[
+  {
+    &quot;kind&quot;: &quot;connect&quot;,
+    &quot;t&quot;: 12711755063,
+    &quot;pid&quot;: 160,
+    &quot;birth&quot;: 1271,
+    &quot;ppid&quot;: 159,
+    &quot;pbirth&quot;: 1268,
+    &quot;name&quot;: &quot;sw-lab&quot;,
+    &quot;ip&quot;: &quot;127.0.0.1&quot;,
+    &quot;port&quot;: 35099,
+    &quot;ret&quot;: 0
+  },
+  {
+    &quot;kind&quot;: &quot;exec&quot;,
+    &quot;t&quot;: 12712535805,
+    &quot;pid&quot;: 161,
+    &quot;birth&quot;: 1271,
+    &quot;ppid&quot;: 160,
+    &quot;pbirth&quot;: 1271,
+    &quot;name&quot;: &quot;/bin/sh&quot;,
+    &quot;preload&quot;: false
+  }
+]</pre></details></article><article><small>SW-002</small><h2>Executable started with nonempty LD_PRELOAD</h2><p>/bin/true [163] ← sw-lab [162]</p><details><summary>Event evidence</summary><pre>[
+  {
+    &quot;kind&quot;: &quot;exec&quot;,
+    &quot;t&quot;: 12715032671,
+    &quot;pid&quot;: 163,
+    &quot;birth&quot;: 1271,
+    &quot;ppid&quot;: 162,
+    &quot;pbirth&quot;: 1271,
+    &quot;name&quot;: &quot;/bin/true&quot;,
+    &quot;preload&quot;: true
+  }
+]</pre></details></article><article><small>SW-003</small><h2>Unexpected ptrace attach or seize request</h2><p>sw-lab [164]</p><details><summary>Event evidence</summary><pre>[
+  {
+    &quot;kind&quot;: &quot;ptrace&quot;,
+    &quot;t&quot;: 12717179325,
+    &quot;pid&quot;: 164,
+    &quot;birth&quot;: 1271,
+    &quot;ppid&quot;: 159,
+    &quot;pbirth&quot;: 1268,
+    &quot;name&quot;: &quot;sw-lab&quot;,
+    &quot;request&quot;: 16,
+    &quot;target&quot;: 0
+  }
+]</pre></details></article><article><small>SW-001</small><h2>Shell execution after a related network connection</h2><p>/bin/sh [176] ← sw-lab [175]</p><details><summary>Event evidence</summary><pre>[
+  {
+    &quot;kind&quot;: &quot;connect&quot;,
+    &quot;t&quot;: 12730583486,
+    &quot;pid&quot;: 175,
+    &quot;birth&quot;: 1272,
+    &quot;ppid&quot;: 159,
+    &quot;pbirth&quot;: 1268,
+    &quot;name&quot;: &quot;sw-lab&quot;,
+    &quot;ip&quot;: &quot;127.0.0.1&quot;,
+    &quot;port&quot;: 53627,
+    &quot;ret&quot;: 0
+  },
+  {
+    &quot;kind&quot;: &quot;exec&quot;,
+    &quot;t&quot;: 12731054609,
+    &quot;pid&quot;: 176,
+    &quot;birth&quot;: 1273,
+    &quot;ppid&quot;: 175,
+    &quot;pbirth&quot;: 1272,
+    &quot;name&quot;: &quot;/bin/sh&quot;,
+    &quot;preload&quot;: false
+  }
+]</pre></details></article></main></html>

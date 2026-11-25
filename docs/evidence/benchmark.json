@@ -1,0 +1,80 @@
+{
+  "source": "lab-witness",
+  "python": "3.12.14",
+  "system": "Linux",
+  "machine": "x86_64",
+  "cases": [
+    {
+      "case": "related-shell",
+      "expected": "SW-001",
+      "observed": [
+        "SW-001"
+      ],
+      "outcome": "TP"
+    },
+    {
+      "case": "preload-marker",
+      "expected": "SW-002",
+      "observed": [
+        "SW-002"
+      ],
+      "outcome": "TP"
+    },
+    {
+      "case": "attach-attempt",
+      "expected": "SW-003",
+      "observed": [
+        "SW-003"
+      ],
+      "outcome": "TP"
+    },
+    {
+      "case": "shell-alone",
+      "expected": null,
+      "observed": [],
+      "outcome": "TN"
+    },
+    {
+      "case": "connect-only",
+      "expected": null,
+      "observed": [],
+      "outcome": "TN"
+    },
+    {
+      "case": "empty-preload",
+      "expected": null,
+      "observed": [],
+      "outcome": "TN"
+    },
+    {
+      "case": "siblings",
+      "expected": null,
+      "observed": [],
+      "outcome": "TN"
+    },
+    {
+      "case": "failed-connect",
+      "expected": null,
+      "observed": [],
+      "outcome": "TN"
+    },
+    {
+      "case": "health-check",
+      "expected": null,
+      "observed": [
+        "SW-001"
+      ],
+      "outcome": "FP"
+    }
+  ],
+  "samples": 4400,
+  "rounds": 200,
+  "processing_us_p50": 1.692,
+  "processing_us_p95": 2.423,
+  "counts": {
+    "TP": 3,
+    "FP": 1,
+    "TN": 5,
+    "FN": 0
+  }
+}

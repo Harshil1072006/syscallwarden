@@ -1,0 +1,21 @@
+name: SyscallWarden lab
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.x'
+          cache: false
+      - run: make test daemon-test
+      - run: docker compose -f docker-compose.yml -f compose.live.yml config --quiet
+      - run: make demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: witness-report
+          path: out/

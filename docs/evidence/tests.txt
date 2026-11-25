@@ -1,0 +1,18 @@
+test_c_encoder_to_engine (test_warden.BundledLab.test_c_encoder_to_engine) ... ok
+test_complete_workload_reports (test_warden.BundledLab.test_complete_workload_reports) ... ok
+test_each_labelled_workload (test_warden.BundledLab.test_each_labelled_workload) ... ok
+test_probe_hook_logic_with_helper_standins (test_warden.BundledLab.test_probe_hook_logic_with_helper_standins) ... ok
+test_cli_rejects_invalid_record (test_warden.Rules.test_cli_rejects_invalid_record) ... ok
+test_cyclic_or_missing_parents (test_warden.Rules.test_cyclic_or_missing_parents) ... ok
+test_failed_connect_and_nonshell (test_warden.Rules.test_failed_connect_and_nonshell) ... ok
+test_inclusive_window_and_future (test_warden.Rules.test_inclusive_window_and_future) ... ok
+test_input_and_html_safety (test_warden.Rules.test_input_and_html_safety) ... ok
+test_limits_and_snapshot_immutability (test_warden.Rules.test_limits_and_snapshot_immutability) ... ok
+test_pid_reuse_and_unrelated_actor (test_warden.Rules.test_pid_reuse_and_unrelated_actor) ... ok
+test_ptrace_approval_request_type_and_preload (test_warden.Rules.test_ptrace_approval_request_type_and_preload) ... ok
+test_three_edges_and_depth_bound (test_warden.Rules.test_three_edges_and_depth_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.597s
+
+OK

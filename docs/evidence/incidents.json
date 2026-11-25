@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "source": "lab-witness",
+  "events": 22,
+  "counts": {
+    "SW-001": 2,
+    "SW-002": 1,
+    "SW-003": 1
+  },
+  "evicted_processes": 0,
+  "omitted_snapshots": 0,
+  "incidents": [
+    {
+      "rule": "SW-001",
+      "title": "Shell execution after a related network connection",
+      "t": 12712535805,
+      "lineage": [
+        {
+          "pid": 161,
+          "birth": 1271,
+          "name": "/bin/sh"
+        },
+        {
+          "pid": 160,
+          "birth": 1271,
+          "name": "sw-lab"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "connect",
+          "t": 12711755063,
+          "pid": 160,
+          "birth": 1271,
+          "ppid": 159,
+          "pbirth": 1268,
+          "name": "sw-lab",
+          "ip": "127.0.0.1",
+          "port": 35099,
+          "ret": 0
+        },
+        {
+          "kind": "exec",
+          "t": 12712535805,
+          "pid": 161,
+          "birth": 1271,
+          "ppid": 160,
+          "pbirth": 1271,
+          "name": "/bin/sh",
+          "preload": false
+        }
+      ]
+    },
+    {
+      "rule": "SW-002",
+      "title": "Executable started with nonempty LD_PRELOAD",
+      "t": 12715032671,
+      "lineage": [
+        {
+          "pid": 163,
+          "birth": 1271,
+          "name": "/bin/true"
+        },
+        {
+          "pid": 162,
+          "birth": 1271,
+          "name": "sw-lab"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "exec",
+          "t": 12715032671,
+          "pid": 163,
+          "birth": 1271,
+          "ppid": 162,
+          "pbirth": 1271,
+          "name": "/bin/true",
+          "preload": true
+        }
+      ]
+    },
+    {
+      "rule": "SW-003",
+      "title": "Unexpected ptrace attach or seize request",
+      "t": 12717179325,
+      "lineage": [
+        {
+          "pid": 164,
+          "birth": 1271,
+          "name": "sw-lab"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "ptrace",
+          "t": 12717179325,
+          "pid": 164,
+          "birth": 1271,
+          "ppid": 159,
+          "pbirth": 1268,
+          "name": "sw-lab",
+          "request": 16,
+          "target": 0
+        }
+      ]
+    },
+    {
+      "rule": "SW-001",
+      "title": "Shell execution after a related network connection",
+      "t": 12731054609,
+      "lineage": [
+        {
+          "pid": 176,
+          "birth": 1273,
+          "name": "/bin/sh"
+        },
+        {
+          "pid": 175,
+          "birth": 1272,
+          "name": "sw-lab"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "connect",
+          "t": 12730583486,
+          "pid": 175,
+          "birth": 1272,
+          "ppid": 159,
+          "pbirth": 1268,
+          "name": "sw-lab",
+          "ip": "127.0.0.1",
+          "port": 53627,
+          "ret": 0
+        },
+        {
+          "kind": "exec",
+          "t": 12731054609,
+          "pid": 176,
+          "birth": 1273,
+          "ppid": 175,
+          "pbirth": 1272,
+          "name": "/bin/sh",
+          "preload": false
+        }
+      ]
+    }
+  ]
+}

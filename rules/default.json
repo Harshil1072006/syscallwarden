@@ -1,0 +1,12 @@
+{
+  "window_ms": 1500,
+  "ancestor_edges": 3,
+  "shells": ["sh", "dash", "bash", "ash", "zsh", "ksh"],
+  "_approved_tracers_note": "The demo starts with an empty allowlist so every PTRACE_ATTACH (16) or PTRACE_SEIZE (0x4206) attempt is reported. Entries match the caller's short process name exactly. An alert records the request regardless of its outcome.",
+  "approved_tracers": [],
+  "titles": {
+    "SW-001": "Shell execution after a related network connection",
+    "SW-002": "Executable started with nonempty LD_PRELOAD",
+    "SW-003": "Unexpected ptrace attach or seize request"
+  }
+}

@@ -1,0 +1,33 @@
+services:
+  lab:
+    build:
+      context: .
+      target: lab
+    network_mode: none
+    cgroup: private
+    user: "65532:65532"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    volumes:
+      - handshake:/run/warden
+    pids_limit: 48
+  sensor:
+    build:
+      context: .
+      target: sensor
+    command: [demo]
+    depends_on: [lab]
+    network_mode: none
+    pid: "service:lab"
+    cgroup: private
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    volumes:
+      - handshake:/run/warden:ro
+      - reports:/report
+    pids_limit: 96
+volumes:
+  handshake: {}
+  reports: {}

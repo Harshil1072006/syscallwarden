@@ -1,0 +1,51 @@
+syscallwarden/
+├── .github/
+│   └── workflows/
+│       └── test.yml
+├── docs/
+│   ├── evidence/
+│   │   ├── benchmark.json
+│   │   ├── events.jsonl
+│   │   ├── incidents.html
+│   │   ├── incidents.json
+│   │   ├── run.txt
+│   │   ├── tests.txt
+│   │   └── workload-stderr.txt
+│   ├── ARCHITECTURE.md
+│   ├── BENCHMARKS.md
+│   └── FILE_TREE.txt
+├── lab/
+│   ├── compose-run.sh
+│   ├── verify.py
+│   └── workload.py
+├── rules/
+│   └── default.json
+├── src/
+│   ├── bpf/
+│   │   ├── warden.bpf.c
+│   │   └── wire.h
+│   ├── collector/
+│   │   ├── collector.c
+│   │   ├── encode.c
+│   │   └── encode.h
+│   ├── daemon/
+│   │   ├── main.go
+│   │   └── main_test.go
+│   └── warden/
+│       └── analyze.py
+├── tests/
+│   ├── benchmark.py
+│   ├── cases.json
+│   ├── encode_test.c
+│   ├── probe_shim.h
+│   ├── probe_test.c
+│   └── test_warden.py
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── LICENSE
+├── Makefile
+├── README.md
+├── compose.live.yml
+├── docker-compose.yml
+└── go.mod

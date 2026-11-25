@@ -1,0 +1,2 @@
+source=lab-witness events=22 SW-001=2 SW-002=1 SW-003=1
+PASS lab assertions: 2 related shells, 1 preload marker, 1 attach attempt

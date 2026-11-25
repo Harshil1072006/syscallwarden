@@ -1,0 +1,11 @@
+{
+  "related-shell": "SW-001",
+  "preload-marker": "SW-002",
+  "attach-attempt": "SW-003",
+  "shell-alone": null,
+  "connect-only": null,
+  "empty-preload": null,
+  "siblings": null,
+  "failed-connect": null,
+  "health-check": null
+}

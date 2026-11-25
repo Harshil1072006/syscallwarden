@@ -1,0 +1,6 @@
+.git
+.github
+out
+build
+docs
+**/__pycache__

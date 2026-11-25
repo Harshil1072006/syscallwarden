@@ -1,0 +1,22 @@
+services:
+  sensor:
+    command: [live]
+    user: "0:65532"
+    cap_add: [BPF, PERFMON]
+    security_opt:
+      - seccomp=unconfined
+    ulimits:
+      memlock: -1
+    volumes:
+      - type: bind
+        source: /sys/kernel/btf/vmlinux
+        target: /sys/kernel/btf/vmlinux
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /sys/kernel/tracing
+        target: /sys/kernel/tracing
+        read_only: true
+        bind:
+          create_host_path: false
